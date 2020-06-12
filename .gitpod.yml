@@ -1,0 +1,8 @@
+tasks:
+  - before: export PATH=$PATH:/home/gitpod/bin:/home/gitpod/.linkerd2/bin
+    init: |
+      gem install civo_cli
+      curl -L https://storage.googleapis.com/kubernetes-release/release/v1.18.3/bin/linux/amd64/kubectl -o /home/gitpod/bin/kubectl
+      chmod 755 /home/gitpod/bin/kubectl
+      curl -sL https://run.linkerd.io/install | sh
+    command: echo "run civo apikey add ... to add your API key"
